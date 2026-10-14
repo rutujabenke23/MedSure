@@ -1,0 +1,57 @@
+
+# MedSure — Project Architecture
+
+## 1. Overview
+
+MedSure aims to help users discover potentially lower-cost medicine alternatives by comparing active ingredients, dosage strength, dosage form, and available prices.
+
+## 2. Proposed Architecture
+
+The application is planned to contain three main layers:
+
+### Frontend
+- HTML, CSS, and JavaScript
+- Medicine search interface
+- Medicine details and price comparison display
+- Input validation and user feedback
+
+### Backend
+- Node.js and Express
+- Search and comparison API
+- Data validation
+- Ingredient and formulation matching logic
+
+### Database
+- PostgreSQL or Supabase
+- Medicine names and verified active ingredients
+- Strength and dosage form
+- Source and timestamp for price information
+
+## 3. Proposed Data Flow
+
+1. User searches for a medicine.
+2. Frontend sends the search request to the backend.
+3. Backend retrieves relevant medicine records.
+4. Matching logic compares ingredients, strength, and dosage form.
+5. The application displays matching products and available prices with their sources.
+
+## 4. Matching Logic
+
+The application may use structured ingredient matching first, followed by similarity scoring to assist with candidate discovery.
+
+Cosine similarity can help compare text representations, but it cannot independently establish that two medicines are clinically interchangeable.
+
+## 5. Data Reliability
+
+- Prefer verified medicine information and trustworthy pricing sources.
+- Display the source and last-updated date for prices.
+- Flag incomplete or uncertain composition data.
+- Avoid presenting unmatched formulations as equivalent.
+
+## 6. Safety Considerations
+
+Medicine alternatives must not be treated as automatic substitution recommendations. Users should consult a qualified pharmacist or doctor before changing a medicine.
+
+## 7. Current Status
+
+This document describes the proposed architecture. Implementation details may change as the project develops.
